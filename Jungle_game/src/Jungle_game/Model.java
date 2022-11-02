@@ -11,6 +11,7 @@ public class Model {
 
 // Functions
 
+
     //    get both user’s name
     private void getUsername(){
 
@@ -24,7 +25,7 @@ public class Model {
     // The position is river/trap/den/land.
     // return a String represent position information
     // "1" represents river, "2" represents trap,
-    // "3" den, "4" land, "5A1" piece
+    // "3" den, "0" land, "4A1" piece
     public String posiInfo(int x, int y){
         String posi= new String();
         return posi;
@@ -49,8 +50,10 @@ public class Model {
 
     // Check whether the pieces are in which position,
     // return a list with two integer (x,y)
-    public int[] piecesInfo(){
-        int[] coordinator=new int[2];
+    public int[][] piecesInfo(String pieces){
+
+        int[][] coordinator=new int[][];
+
         return coordinator;
     }
 
