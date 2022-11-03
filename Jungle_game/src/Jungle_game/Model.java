@@ -29,14 +29,6 @@ public class Model {
     // The position is river/trap/den/land.
     // return a String represent position information
     // "1" represents river, "2" represents trap,
-<<<<<<< Updated upstream
-    // "3" den, "4" land, "5A1" piece
-    public String posiInfo(int x, int y){
-        String posi= new String();
-        return posi;
-    }
-
-=======
     // "3" den, "0" land, "4A1" piece
     public String[][] posiInfo() throws IOException {
         Scanner scanner = new Scanner( new BufferedReader(new FileReader("Jungle_game/src/board.txt")));
@@ -72,7 +64,6 @@ public class Model {
 //        return boardList;
         return boardlist;
 }
->>>>>>> Stashed changes
     // check is that any user fulfills the win condition
 // list is empty: other side is win
 // list is not empty: check whether chessmen stay in the den.
@@ -92,11 +83,6 @@ public class Model {
 
     // Check whether the pieces are in which position,
     // return a list with two integer (x,y)
-<<<<<<< Updated upstream
-    public int[] piecesInfo(){
-        int[] coordinator=new int[2];
-        return coordinator;
-=======
     public int[] piecesInfo(String pieces) throws IOException {
 //        int targeti = 0, targetj= 0;
         int[] target= new int[2];
@@ -111,7 +97,6 @@ public class Model {
             }
         }
         return target;
->>>>>>> Stashed changes
     }
 
     // check the available chessman which is still alive
