@@ -1,12 +1,17 @@
 package Jungle_game;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
-public class Viewer {
-    public static void main(String[] args) {
-        Viewer viewer = new Viewer();
-        viewer.displayMenu();
 
+public class Viewer {
+    public static void main(String[] args) throws IOException {
+    Model model = new Model();
+//        String[][] list= model.posiInfo();
+        int[] ans = model.piecesInfo("4A1");
+        System.out.println(ans[0]);
+        System.out.println(ans[1]);
     }
 
     //    Functions

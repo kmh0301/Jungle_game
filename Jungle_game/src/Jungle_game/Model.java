@@ -1,7 +1,12 @@
 package Jungle_game;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+import java.util.Arrays;
 
 public class Model {
 
@@ -24,12 +29,50 @@ public class Model {
     // The position is river/trap/den/land.
     // return a String represent position information
     // "1" represents river, "2" represents trap,
+<<<<<<< Updated upstream
     // "3" den, "4" land, "5A1" piece
     public String posiInfo(int x, int y){
         String posi= new String();
         return posi;
     }
 
+=======
+    // "3" den, "0" land, "4A1" piece
+    public String[][] posiInfo() throws IOException {
+        Scanner scanner = new Scanner( new BufferedReader(new FileReader("Jungle_game/src/board.txt")));
+        final  int totalRow = 9;
+        final  int totalColumn = 7;
+        String[][] boardlist = new  String[totalRow][totalColumn];
+        while (scanner.hasNextLine()){
+            for (int i = 0; i<boardlist.length ; i++) {
+                String[] line = scanner.nextLine().trim().split(" ");
+                for (int j = 0; j < line.length; j++) {
+                    boardlist[i][j] =  (line[j]);
+                }
+            }
+        }
+        System.out.println(Arrays.deepToString(boardlist));
+        System.out.println(Arrays.deepToString(boardlist).replace("[[","|").replace("], ", "|\n").replace("[", "|").replace(", ", "|").replace("]]", "|"));
+//        for (int i = 0; i < boardlist.length;i++) {
+//            System.out.println(Arrays.toString(boardlist[i]));
+//        }
+
+
+
+//        BufferedReader bufReader =;
+//        ArrayList<String> boardList = new ArrayList<>();
+//
+//        String line = bufReader.readLine();
+//
+//        while (line != null) {
+//            boardList.add(line);
+//            line = bufReader.readLine();
+//        }
+//        bufReader.close();
+//        return boardList;
+        return boardlist;
+}
+>>>>>>> Stashed changes
     // check is that any user fulfills the win condition
 // list is empty: other side is win
 // list is not empty: check whether chessmen stay in the den.
@@ -49,9 +92,26 @@ public class Model {
 
     // Check whether the pieces are in which position,
     // return a list with two integer (x,y)
+<<<<<<< Updated upstream
     public int[] piecesInfo(){
         int[] coordinator=new int[2];
         return coordinator;
+=======
+    public int[] piecesInfo(String pieces) throws IOException {
+//        int targeti = 0, targetj= 0;
+        int[] target= new int[2];
+        String[][] boardlist = posiInfo();
+        System.out.println("piecesinfonow");
+        for (int i = 0; i < boardlist.length; i++) {
+            for (int j = 0; j < boardlist[i].length; j++) {
+                if (boardlist[i][j].equals(pieces)){
+                    target[0]=i;
+                    target[1]=j;
+                }
+            }
+        }
+        return target;
+>>>>>>> Stashed changes
     }
 
     // check the available chessman which is still alive
