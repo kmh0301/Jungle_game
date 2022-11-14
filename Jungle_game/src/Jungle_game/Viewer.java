@@ -3,7 +3,15 @@ import java.util.Scanner;
 
 
 public class Viewer {
+
+
+    public Model linkedModel = new Model();
+    public Controller linkedController = new Controller(linkedModel);
+    private String usernameA;
+    private String usernameB;
+
     public static void main(String[] args) {
+
         Viewer viewer = new Viewer();
         viewer.displayMenu();
 
@@ -24,9 +32,12 @@ public class Viewer {
         System.out.println("Please input your option in integer:");
         Scanner scanner= new Scanner(System.in);
         String option = scanner.next();
+        //linkedController.evalMenu(option);
         switch (option){
             case "1":{
                 System.out.println("Play Game");
+                displayAskUsername();
+
                 break;
             }
             case "2":{
@@ -35,7 +46,7 @@ public class Viewer {
             }
             case "3":{
                 System.out.println("Exit Now...");
-                break;
+                break loop;
             }
             default:{
                 System.out.println("Please input the correct value");
@@ -52,7 +63,8 @@ public class Viewer {
         loop: while (true){
             Scanner scanner = new Scanner(System.in);
             while (displayMenu){
-                System.out.println("displayUserGuide");
+                System.out.println("-------User Guide-------");
+                System.out.println("XXXXXXXXXXXXXX");
                 displayMenu =false;
             }
             System.out.println("-------Input Your Option-------");
@@ -82,6 +94,7 @@ public class Viewer {
 //    display the (updated) chess board and pieces on it
 //    a question: whether the string[][] board is public or not?
     public void displayBoard(String[][] board){
+        System.out.println(board);
         if(board.length == 0 || board == null){
             throw new IllegalArgumentException();
         }
@@ -89,7 +102,18 @@ public class Viewer {
 
 //    display the control panel(with rule of the game) to user to operate
     public void displayControl(String userA, String userB, boolean isUserA){
+        if (isUserA==true){
+            System.out.printf("Please %s choose Your movement", userA);
+        }else {
+            System.out.printf("Please %s choose Your movement", userB);
+        }
+    }
 
+    public void displayAskUsername(){
+        System.out.println("Please input UserA name:");
+        linkedController.getuserAname();
+        System.out.println("Please input UserB name:");
+        linkedController.getuserBname();
     }
 
 }

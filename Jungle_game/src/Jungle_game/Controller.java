@@ -3,6 +3,10 @@ package Jungle_game;
 import java.util.Scanner;
 
 public class Controller {
+    public Controller(Model linkedModel) {
+        this.linkedModel = linkedModel;
+    }
+
     public Model linkedModel;
 
     public void getuserAname(){

@@ -71,7 +71,7 @@ public class Model {
     // return a list with two integer (x,y)
     public int[][] piecesInfo(String pieces){
 
-        int[][] coordinator=new int[][];
+        int[][] coordinator=new int[1][1];
 
         return coordinator;
     }
