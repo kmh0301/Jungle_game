@@ -3,10 +3,8 @@ import java.util.Scanner;
 
 
 public class Viewer {
-
-
     public Model linkedModel = new Model();
-    public Controller linkedController = new Controller(linkedModel);
+    public Controller linkedController = new Controller();
     private String usernameA;
     private String usernameB;
 
@@ -32,12 +30,12 @@ public class Viewer {
         System.out.println("Please input your option in integer:");
         Scanner scanner= new Scanner(System.in);
         String option = scanner.next();
+
         //linkedController.evalMenu(option);
         switch (option){
             case "1":{
                 System.out.println("Play Game");
                 displayAskUsername();
-
                 break;
             }
             case "2":{

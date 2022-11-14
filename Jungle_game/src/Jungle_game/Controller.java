@@ -3,11 +3,8 @@ package Jungle_game;
 import java.util.Scanner;
 
 public class Controller {
-    public Controller(Model linkedModel) {
-        this.linkedModel = linkedModel;
-    }
-
-    public Model linkedModel;
+    public Model linkedModel = new Model();
+    public Viewer linkedViewer = new Viewer();
 
     public void getuserAname(){
         String UserA;
@@ -30,7 +27,7 @@ public class Controller {
 //    return a boolean represents whether break the driver loop
 //    if(state == “menu”)evalMenu(expression)
 //    elseif(state == “Game”)evalGame(expression)
-//    check whether can move a piece to a certain place
+//    check whether you can move a piece to a certain place
 
 // return end index
 //    ? not sure about how to use this function
