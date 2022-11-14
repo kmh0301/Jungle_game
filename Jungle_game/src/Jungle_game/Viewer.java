@@ -3,6 +3,10 @@ import java.util.Scanner;
 
 
 public class Viewer {
+
+    public Controller linkedController = new Controller();;
+
+
     public static void main(String[] args) {
         Viewer viewer = new Viewer();
         viewer.displayMenu();
@@ -24,9 +28,14 @@ public class Viewer {
         System.out.println("Please input your option in integer:");
         Scanner scanner= new Scanner(System.in);
         String option = scanner.next();
+//        linkedController.evalMenu(option);
         switch (option){
             case "1":{
                 System.out.println("Play Game");
+                System.out.println("First Username: ");
+                linkedController.getuserAname();
+                System.out.println("second Username: ");
+                linkedController.getuserBname();
                 break;
             }
             case "2":{
