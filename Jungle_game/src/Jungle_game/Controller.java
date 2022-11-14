@@ -3,6 +3,22 @@ package Jungle_game;
 import java.util.Scanner;
 
 public class Controller {
+    public Model linkedModel;
+
+    public void getuserAname(){
+        String UserA;
+        Scanner scanner = new Scanner(System.in);
+        UserA = scanner.nextLine();
+        linkedModel.setAuserName(UserA);
+    }
+
+    public void getuserBname(){
+        String UserB;
+        Scanner scanner = new Scanner(System.in);
+        UserB = scanner.nextLine();
+        linkedModel.setBuserName(UserB);
+    }
+
 
 //    Functions
 
@@ -15,6 +31,7 @@ public class Controller {
 // return end index
 //    ? not sure about how to use this function
     private String getWord(int startPosition, String expression){
+
         return new String();
     }
 
@@ -25,6 +42,8 @@ public class Controller {
     public void evalMenu(String userCommand){
         if(userCommand == null) {
             throw new IllegalArgumentException();
+        }else{
+
         }
     }
 

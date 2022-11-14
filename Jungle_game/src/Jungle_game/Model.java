@@ -2,12 +2,31 @@ package Jungle_game;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 
 public class Model {
-
-// Fields
-    private String AuserName,BuserName;
+    private String AuserName;
+    private String BuserName;
     public String[][] board = new String[9][];
+
+    public void setAuserName(String auserName) {
+        AuserName = auserName;
+    }
+    public String getAuserName() {
+        return AuserName;
+    }
+
+
+    public String getBuserName() {
+        return BuserName;
+    }
+
+    public void setBuserName(String buserName) {
+        BuserName = buserName;
+    }
+
+
 
 // Functions
 

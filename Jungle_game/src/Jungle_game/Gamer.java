@@ -11,6 +11,7 @@ public class Gamer {
 
 //    Functions
     public void main(String[] args) {
+
         linkedViewer.displayMenu();
     }
 
